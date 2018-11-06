@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <conio.h>
 #include <stdio.h>
+#include "Enemy.cpp"
 using namespace std;
 
 int main();
@@ -55,9 +56,16 @@ void createCharacter()
 // Це тупо заглушка
 void plug()
 {
-	cout << "Иди нах";
-	Sleep(5000);
-	exit(0);
+	Enemy skelet(50, "Skeleton");
+	int a=0;
+	for(int i = 0;i<=100;i++)
+	{	
+		a = skelet.getEnemyDamage();
+		cout << a << endl;
+		Sleep(150);	
+	}
+	
+	system("PAUSE");
 }
 
 int startgame()
@@ -188,9 +196,9 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	setlocale(0, "");
-	startgame();
-	combat();
-	EndGame();
+//	startgame();
+//	combat();
+//	EndGame();
 	system("PAUSE");
 	plug();
 }
