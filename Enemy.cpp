@@ -11,13 +11,21 @@ class Enemy
 	public: 
 		Enemy(int n_enemyHealth, int n_enemyBasicDamage, string n_nameEnemy)
 		{
-			setState(n_enemyHealth, n_enemyBasicDamage, string n_nameEnemy);
+			setState(n_enemyHealth, n_enemyBasicDamage, n_nameEnemy);
 		}
 		void setState(int n_enemyHealth, int n_enemyBasicDamage, string n_nameEnemy)
 		{
 			enemyHealth = n_enemyHealth;
 			enemyBasicDamage = n_enemyBasicDamage;
 			nameEnemy = n_nameEnemy;			
+		}
+		int getEnemyDamage()
+		{
+			return enemyBasicDamage;
+		}
+		void setEnemyDamage(int n_enemyBasicDamage)
+		{
+			enemyBasicDamage = n_enemyBasicDamage;
 		}
 		
 		

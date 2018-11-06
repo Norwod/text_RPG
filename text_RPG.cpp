@@ -64,11 +64,11 @@ int startgame()
 {
 	cout << "Добрый путник, хочешь ли ты пройти приключение полное опасностей?\nНажми Y, чтобы согласиться, или нажми N, чтобы пойти домой к мамочке\n";
 	char choice = '0';
-	while (choice != 'y' && choice != 'н' && choice != 'n' && choice != 'т')
+	while (choice != 'y' && choice != '�' && choice != 'n' && choice != '�')
 	{
 		choice = _getch();		
 	}	
-	if (choice == 'n' || choice == 'т')
+	if (choice == 'n' || choice == '�')
 	{
 		cout << "Ну и иди отсюда нахуй, мудила" << endl;
 		Sleep(5000);
@@ -81,10 +81,14 @@ int startgame()
 }
 
 void combat()
-{
+{ 
+
+	cout << "���������� �� ���� � ���������:" << endl;
+	cout << "����� 'D', ����� ������� ���� ����������\n����� 'H', ����� ����������\n";
 	cout << "Hero health is " << characterHealth << endl;
 	cout << "Enemy Health is " << enemyHealth << endl;
-	while (enemyHealth >= 0 && characterHealth >= 0) {
+	while (enemyHealth >= 0 && characterHealth >= 0)
+	{
 		HeroActions();
 		EnemyActions();
 		RefreshScreen();
@@ -94,19 +98,13 @@ void combat()
 void HeroActions()
 {
 	unsigned short int heal = 5;
-	char button;
-	button = _getch();
-	bool check = true;
-	/*while (check)
+	char button = '0';
+	button = _getch();	
+	while (button != 'd' && button != 'h' && button != 't') 
 	{
-		if (button != 'h' || button != 'd') {
-			cout << "Repeat" << endl;
-			check = true;
-		}
-		else {
-			check = false;
-		}
-	}*/
+		button = _getch();
+	}
+	
 	cout << "Битва началась" << endl;
 	switch (button)
 	{
@@ -122,8 +120,7 @@ void HeroActions()
 		if (characterHealth == 50)
 		{
 			cout << "your health is full" << endl;
-		}
-		else {
+		} else {
 			characterHealth += heal;
 			cout << "Hero health is " << characterHealth << endl;
 			break;
@@ -153,9 +150,9 @@ void RefreshScreen()
 {
 	system("cls");
 	cout << "Hero Damage is " << characterDamage << endl;
-	cout << "Enemy Health is " << enemyHealth << endl;
-	cout << "Enemy Damage is " << enemyDamage << endl;
 	cout << "Hero Health is " << characterHealth << endl << endl;
+	cout << "Enemy Health is " << enemyHealth << endl;
+	cout << "Enemy Damage is " << enemyDamage << endl;	
 }
 
 // Метод для броска кубика, через него будет идти подсчёт урона
