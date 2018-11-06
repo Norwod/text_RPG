@@ -34,10 +34,7 @@ class Enemy
 		{
 		//	srand(20)
 		//	int ran = rand() % 20 + 1;
-			srand(time(0));
-			//
-			//
-			int a=0;
+			srand(time(0));			
 			enemyBasicDamage =1+ rand() %20;
 			return enemyBasicDamage;
 		}

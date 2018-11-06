@@ -55,7 +55,7 @@ void createCharacter()
 
 // Р¦Рµ С‚СѓРїРѕ Р·Р°РіР»СѓС€РєР°
 void plug()
-{
+{	
 	Enemy skelet(50, "Skeleton");
 	int a=0;
 	for(int i = 0;i<=100;i++)
@@ -90,7 +90,10 @@ int startgame()
 
 void combat()
 { 
-
+	cout << "Инструкция по игре в поеботину:" << endl;
+	cout << "Нажми 'D', чтобы нанести урон противнику\nНажми 'H', чтобы похилиться\n";
+	cout << "Hero health is " << characterHealth << endl;
+	cout << "Enemy Health is " << enemyHealth << endl;
 	cout << "Инструкция по игре в поеботину:" << endl;
 	cout << "Нажми 'D', чтобы нанести урон противнику\nНажми 'H', чтобы похилиться\n";
 	cout << "Hero health is " << characterHealth << endl;
